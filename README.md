@@ -120,14 +120,13 @@ To make NeuroStackNet's decisions interpretable (important for clinical trust), 
 - **SHAP (SHapley Additive exPlanations)** — global feature attribution showing how much each base model's class-probability output contributes to the final decision.
 - **LIME (Local Interpretable Model-agnostic Explanations)** — local, per-instance explanations showing which base-model outputs pushed a specific prediction toward or away from a class.
 
-Both are visualized in the notebook and discussed in Chapter 4.5 of the [thesis report](./neurostack__.pdf).
+
 
 ## Repository Structure
 
 ```
 .
 ├── neurostack.ipynb       # Full implementation: data pipeline, all models, training, evaluation
-├── neurostack__.pdf        # Full written thesis report
 └── README.md               # This file
 ```
 
@@ -161,7 +160,7 @@ pip install shap lime
 ## How to Run
 
 1. **Get the dataset.** This project uses a 4-class brain tumor MRI dataset (Glioma / Meningioma / Pituitary / No Tumor) organized into `Training/<class>/` and `Testing/<class>/` folders.
-    -Dataset Link- https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data?select=Training     
+    - Dataset Link- https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data?select=Training     
 2. **Adapt the paths.** The notebook was built for Google Colab and references Google Drive paths (e.g. `/content/drive/MyDrive/...`) and `google.colab` calls (`drive.mount`, `files.download`, `files.upload`). To run locally or on another platform:
    - Replace `zip_file_path` / `extracted_folder_path` with your local dataset location.
    - Remove or replace the `google.colab` import/mount/upload/download cells with standard file I/O.
